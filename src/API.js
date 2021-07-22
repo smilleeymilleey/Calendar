@@ -1,7 +1,6 @@
 
 
-
-    function getData() {
+       function getData() {
         fetch("https://lingua-robot.p.rapidapi.com/language/v1/entries/en/example", {
             "method": "GET",
             "headers": {
@@ -12,7 +11,7 @@
         
         .then(response => response.json())
         .then(data => {
-         this.getData(data)
+            console.log(data)
         })
         .catch((error) => {
           console.error('Error:', error);
@@ -21,7 +20,11 @@
        }
     
 
-export default getData()
+
+
+
+       
+getData()
 
 
 
