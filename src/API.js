@@ -1,4 +1,4 @@
-
+// add the value of the search input in a variable where the word example is in the query string
 
  export default function getData() {
     fetch("https://lingua-robot.p.rapidapi.com/language/v1/entries/en/example", {
