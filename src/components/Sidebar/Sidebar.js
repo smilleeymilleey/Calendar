@@ -1,5 +1,6 @@
 import React from 'react'
 import SearchBar from "../SearchBar.js/SearchBar.js"
+import Card from "../Card/Card.js"
 import "./sidebar.css"
 
 
@@ -22,6 +23,7 @@ function Sidebar() {
             </div>
         <div id="searchColumn" className="column">
             <SearchBar /> 
+            <Card />
         </div>
         </div>
         </>
