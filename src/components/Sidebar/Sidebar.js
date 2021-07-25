@@ -20,7 +20,7 @@ function Sidebar() {
                     <button>Rhymes</button>
                 </div>
             </div>
-        <div className="column">
+        <div id="searchColumn" className="column">
             <SearchBar /> 
         </div>
         </div>
