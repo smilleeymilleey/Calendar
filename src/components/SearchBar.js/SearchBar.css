@@ -1,6 +1,8 @@
 
 .searchBtn {
-    background-color: white;
+    background-color: mediumpurple;
+    border-color: mediumpurple;
+    color:white;
     font-weight: bold;
 }
 

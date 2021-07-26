@@ -19,7 +19,7 @@ function Sidebar(props) {
         <>
         <div className="columns">
             <div className="column is-2">
-                <button id="dictionary" className="sideBtn">Dictionary</button>
+                <button id="dictionary">Dictionary</button>
                 <button id="definition" className="sideBtn">Definitions</button>
                 <div className="sideBarItem">
                     <button className="sideBtn">Synonyms</button>

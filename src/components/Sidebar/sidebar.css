@@ -9,7 +9,15 @@
 
 #dictionary{
     background-color: mediumpurple;
+    border-style:none;
     color: white;
+    display: block;
+    width: 110%;
+    height: 50px;
+    text-align: center;
+    padding:10px;
+    font-size: 25px;
+    font-weight: bold;
 }
 
 #searchColumn {
@@ -17,11 +25,19 @@
 }
 
 .sideBtn {
-    background-color: white;
+    background-color: lightslategray;
+    color: lightgray;
+    font-size: 15px;
+    font-weight: bold;
+    border-style: none;
     display: block;
     width: 110%;
     height: 50px;
     text-align: center;
     padding:10px;
+}
 
+.sideBtn:hover {
+    color: white;
+    cursor: pointer;
 }
