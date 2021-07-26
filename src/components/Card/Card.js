@@ -4,7 +4,7 @@ import Sidebar from "../Sidebar/Sidebar.js"
 
 
 
-function Card({ word }) {
+function Card({ word, definition }) {
     return (
         <div>
             <div class="card">
@@ -16,7 +16,7 @@ function Card({ word }) {
                 </div>
                 <div class="media-content">
                     <p class="title is-4">{word.entry}</p>
-                    <p class="subtitle is-6">@johnsmith</p>
+                    <p class="subtitle is-6">{definition.lexemes[0].senses[0].definition}</p>
                 </div>
                 </div>
                 <div class="content">
