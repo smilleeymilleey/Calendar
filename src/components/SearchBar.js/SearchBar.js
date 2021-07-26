@@ -1,15 +1,14 @@
-import React, { useState, useEffect } from 'react'
-import getData from "../../API.js"
+import React, { useState } from 'react'
 import "./SearchBar.css"
 
-function SearchBar() {
-    const [ search, setSearch ] = useState()
+function SearchBar({search , setSearch, callApi}) {
+    
 
     return (
         <div>
             <div className="search">
-                <input placeholder="search" value = {search} onChange={(e) => setSearch(e.target.value)}/>
-                <button onClick={()=> getData(search)}>button</button>
+                <input placeholder="search" value={search} onChange={(e) => setSearch(e.target.value)}/>
+                <button onClick={()=> callApi()}>button</button>
             </div> 
         </div>
 )

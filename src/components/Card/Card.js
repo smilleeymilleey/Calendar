@@ -1,8 +1,10 @@
 import React from 'react'
 import "./card.css"
+import Sidebar from "../Sidebar/Sidebar.js"
 
 
-function Card() {
+
+function Card({ word }) {
     return (
         <div>
             <div class="card">
@@ -13,7 +15,7 @@ function Card() {
                 <div class="media-left">
                 </div>
                 <div class="media-content">
-                    <p class="title is-4">John Smith</p>
+                    <p class="title is-4">{word.entry}</p>
                     <p class="subtitle is-6">@johnsmith</p>
                 </div>
                 </div>

@@ -1,11 +1,20 @@
-import React from 'react'
+import React, { useState } from 'react'
 import SearchBar from "../SearchBar.js/SearchBar.js"
 import Card from "../Card/Card.js"
 import "./sidebar.css"
+import getData from "../../API"
 
 
 
-function Sidebar() {
+function Sidebar(props) {
+    const [ search, setSearch ] = useState()
+    const [ results, setResults ] = useState()
+    
+    async function callApi() {
+        let res = await getData(search)
+        setResults(res)
+    }
+
     return (  
         <>
         <div className="columns">
@@ -22,8 +31,8 @@ function Sidebar() {
                 </div>
             </div>
         <div id="searchColumn" className="column">
-            <SearchBar /> 
-            <Card />
+            <SearchBar search={search} setSearch={setSearch} callApi={callApi} /> 
+            {results && <Card word={results}/> }
         </div>
         </div>
         </>
