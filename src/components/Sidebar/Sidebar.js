@@ -19,15 +19,16 @@ function Sidebar(props) {
         <>
         <div className="columns">
             <div className="column is-2">
-                <button>Definitions</button>
+                <button id="dictionary" className="sideBtn">Dictionary</button>
+                <button id="definition" className="sideBtn">Definitions</button>
                 <div className="sideBarItem">
-                    <button>Synonyms</button>
+                    <button className="sideBtn">Synonyms</button>
                 </div>
                 <div className="sideBarItem">
-                    <button>Antonyms</button>
+                    <button className="sideBtn">Antonyms</button>
                 </div>
                 <div className="sideBarItem">
-                    <button>Rhymes</button>
+                    <button className="sideBtn">Rhymes</button>
                 </div>
             </div>
         <div id="searchColumn" className="column">

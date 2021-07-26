@@ -1,5 +1,18 @@
-.search {
- background-color: white;
 
+.searchBtn {
+    background-color: white;
+    font-weight: bold;
 }
 
+.searchBar{
+    height: 10%;
+    width: 50%;
+    margin-top: 10%;
+}
+
+.search {
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+    text-align: center;
+}

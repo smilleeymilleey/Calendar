@@ -2,11 +2,26 @@
 
 
 .column {
-    background-color: aqua;
+    background-color: lightslategray;
     height: 100vh;
     width: 100vh;
 }
 
+#dictionary{
+    background-color: mediumpurple;
+    color: white;
+}
+
 #searchColumn {
-    background-color: pink;
+    background-color: whitesmoke;
+}
+
+.sideBtn {
+    background-color: #bbb;
+    display: block;
+    width: 110%;
+    height: 50px;
+    text-align: center;
+    padding:10px;
+
 }

@@ -7,8 +7,8 @@ function SearchBar({search , setSearch, callApi}) {
     return (
         <div>
             <div className="search">
-                <input placeholder="search" value={search} onChange={(e) => setSearch(e.target.value)}/>
-                <button onClick={()=> callApi()}>button</button>
+                <input className= "searchBar" placeholder="search" value={search} onChange={(e) => setSearch(e.target.value)}/>
+                <button className="searchBtn"onClick={()=> callApi()}>Search</button>
             </div> 
         </div>
 )

@@ -16,13 +16,11 @@ function Card({ word, definition }) {
                 </div>
                 <div class="media-content">
                     <p class="title is-4">{word.entry}</p>
-                    <p class="subtitle is-6">{definition.lexemes[0].senses[0].definition}</p>
+                 
                 </div>
                 </div>
                 <div class="content">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Phasellus nec iaculis mauris. <a>@bulmaio</a>.
-                <a href="#">#css</a> <a href="#">#responsive</a>
+                    <p class="subtitle is-6">{definition.lexemes[0].senses[0].definition}</p>
                 <br></br>
                 <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
                 </div>
