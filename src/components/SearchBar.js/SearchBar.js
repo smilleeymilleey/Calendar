@@ -5,15 +5,11 @@ import "./SearchBar.css"
 function SearchBar() {
     const [ search, setSearch ] = useState()
 
-    function getSearchValue(e) {
-        let searchValue=e.target.value
-        console.log(searchValue)
-    }
     return (
         <div>
             <div className="search">
-                <input placeholder="search" value = {search} onChange={getSearchValue}/>
-                <button onClick={()=> getData()}>button</button>
+                <input placeholder="search" value = {search} onChange={(e) => setSearch(e.target.value)}/>
+                <button onClick={()=> getData(search)}>button</button>
             </div> 
         </div>
 )
