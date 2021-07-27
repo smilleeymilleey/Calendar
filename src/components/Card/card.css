@@ -8,3 +8,12 @@
 #speech{
   font-style:italic;  
 }
+
+#sound {
+  color: mediumpurple;
+  font-size: 25px;
+}
+
+#sound:hover {
+  cursor: pointer;
+}
