@@ -6,15 +6,14 @@ import getData from "../../API"
 
 
 
-function Sidebar(props) {
+function Sidebar() {
     const [ search, setSearch ] = useState()
     const [ results, setResults ] = useState()
-    
+
     async function callApi() {
         let res = await getData(search)
         setResults(res)
     }
-
     return (  
         <>
         <div className="columns">
@@ -33,7 +32,7 @@ function Sidebar(props) {
             </div>
         <div id="searchColumn" className="column">
             <SearchBar search={search} setSearch={setSearch} callApi={callApi} /> 
-            {results && <Card word={results} definition={results} sound={results} partSpeech={results}/> }
+            {results && <Card word={results} pro={results} definition={results} sound={results} partSpeech={results}/> }
         </div>
         </div>
         </>

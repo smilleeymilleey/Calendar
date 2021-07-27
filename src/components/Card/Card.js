@@ -3,9 +3,7 @@ import "./card.css"
 import EmojiObjectsIcon from '@material-ui/icons/EmojiObjects';
 
 
-
-
-function Card({ word, definition, partSpeech, sound }) {
+function Card({ word, definition, partSpeech, sound, pro }) {
     return (
         <div>
             <div className="card">
@@ -24,6 +22,7 @@ function Card({ word, definition, partSpeech, sound }) {
                         </a>  
                       }     
                     </p>
+                    <p>{pro.pronunciations[0].transcriptions[0].transcription}</p>
                     <hr></hr>
                     <p id="speech" className="subtitle is-6">{partSpeech.lexemes[0].partOfSpeech}</p>
                     <div className="content">
