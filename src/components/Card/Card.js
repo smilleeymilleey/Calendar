@@ -10,10 +10,10 @@ function Card({ word, definition, partSpeech, sound, pro }) {
     const setModalOpenToTrue =()=>{
         setModalOpen(true)
     }
-    
     const setModalOpenToFalse =()=>{
         setModalOpen(false)
     }
+
     return (
         <div>
             <div className="card">
@@ -25,20 +25,22 @@ function Card({ word, definition, partSpeech, sound, pro }) {
                 </div>
                 <div className="media-content">
                     <p className="title is-4">{word.entry} </p>
-                   
+                    {/* if AUDIO URL IS AVAILABLE- A MODAL WILL OPEN WITH LINK TO AUDIO CLIP */}
                      {
                         sound.pronunciations[0].audio?.url && 
-                        <button id="myBtn"  onClick={setModalOpenToTrue} href={sound.pronunciations[0].audio.url}>
+                        <button id="myBtn" onClick={setModalOpenToTrue} href={sound.pronunciations[0].audio.url}>
                             <EmojiObjectsIcon id="sound"/> 
                         </button>  
                       }  
                       <div id="myModal"  className="modal">
-                                <h1>Content</h1>
+                        <h1>Content</h1>
                      </div>  
                      <Modal isOpen={modalOpen}>
                          <button onClick={setModalOpenToFalse}>X</button>
+                         <h1>Test content </h1>
+                         {/* embed audio link here */}
                      </Modal>
-                   
+                    {/* END OF MODAL */}
                     <p>{pro.pronunciations[0].transcriptions[0].transcription}</p>
                     <hr></hr>
                     <p id="speech" className="subtitle is-6">{partSpeech.lexemes[0].partOfSpeech}</p>
