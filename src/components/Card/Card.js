@@ -17,10 +17,12 @@ function Card({ word, definition, partSpeech, sound }) {
                 </div>
                 <div className="media-content">
                     <p className="title is-4">{word.entry}
-                        {
-                         sound.pronunciations[0].audio?.url &&   
-                          <EmojiObjectsIcon id="sound" href={sound.pronunciations[0].audio.url}/> 
-                        } 
+                     {
+                        sound.pronunciations[0].audio?.url && 
+                        <a href={sound.pronunciations[0].audio.url}>
+                            <EmojiObjectsIcon id="sound"/> 
+                        </a>  
+                      }     
                     </p>
                     <hr></hr>
                     <p id="speech" className="subtitle is-6">{partSpeech.lexemes[0].partOfSpeech}</p>
