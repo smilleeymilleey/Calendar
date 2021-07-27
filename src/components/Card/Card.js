@@ -26,10 +26,10 @@ function Card({ word, definition, partSpeech, sound }) {
                     </p>
                     <hr></hr>
                     <p id="speech" className="subtitle is-6">{partSpeech.lexemes[0].partOfSpeech}</p>
+                    <div className="content">
+                        <p className="subtitle is-6">{definition.lexemes[0].senses[0].definition}</p>
+                    </div>
                 </div>
-                </div>
-                <div className="content">
-                    <p className="subtitle is-6">{definition.lexemes[0].senses[0].definition}</p>
                 </div>
             </div>
             </div>
