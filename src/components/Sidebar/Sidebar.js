@@ -33,7 +33,7 @@ function Sidebar(props) {
             </div>
         <div id="searchColumn" className="column">
             <SearchBar search={search} setSearch={setSearch} callApi={callApi} /> 
-            {results && <Card word={results} definition={results} partSpeech={results}/> }
+            {results && <Card word={results} definition={results} sound={results} partSpeech={results}/> }
         </div>
         </div>
         </>

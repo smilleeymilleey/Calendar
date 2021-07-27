@@ -1,10 +1,24 @@
 import React from 'react'
 import "./card.css"
+import EmojiObjectsIcon from '@material-ui/icons/EmojiObjects';
 
 
 
 
-function Card({ word, definition, partSpeech}) {
+function Card({ word, definition, partSpeech, sound }) {
+    function isAudioAvailable( props ) {
+        const isAudio = props.isAudio
+        if (isAudio) {
+            return 
+            <EmojiObjectsIcon href={sound.pronunciations[0].audio.url}/>
+        }
+        return (
+            <h1>No Audio Available</h1>
+        )
+    }
+
+
+
     return (
         <div>
             <div className="card">
@@ -15,9 +29,19 @@ function Card({ word, definition, partSpeech}) {
                 <div className="media-left">
                 </div>
                 <div className="media-content">
-                    <p className="title is-4">{word.entry}</p>
+                    <p className="title is-4">{word.entry}</p> 
+                        {
+                    
+                    
+                         sound.pronunciations[0].audio?.url &&
+                               
+                          <EmojiObjectsIcon href={sound.pronunciations[0].audio.url}/>
+                            
+                         
+                            
+                        } 
                     <hr></hr>
-                    <p className="subtitle is-6">{partSpeech.lexemes[0].partOfSpeech}</p>
+                    <p id="speech" className="subtitle is-6">{partSpeech.lexemes[0].partOfSpeech}</p>
                 </div>
                 </div>
                 <div className="content">
