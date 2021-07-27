@@ -4,7 +4,7 @@ import "./card.css"
 
 
 
-function Card({ word, definition }) {
+function Card({ word, definition, partSpeech}) {
     return (
         <div>
             <div className="card">
@@ -17,6 +17,7 @@ function Card({ word, definition }) {
                 <div className="media-content">
                     <p className="title is-4">{word.entry}</p>
                     <hr></hr>
+                    <p className="subtitle is-6">{partSpeech.lexemes[0].partOfSpeech}</p>
                 </div>
                 </div>
                 <div className="content">
