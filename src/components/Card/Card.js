@@ -36,10 +36,7 @@ function Card({ word, definition, partSpeech, sound, pro }) {
                             <EmojiObjectsIcon id="sound"/> 
                         </button>  
                       }  
-                      <div id="myModal" className="modal">
-                        <h1>Content</h1>
-                     </div>  
-                     <Modal isOpen={modalOpen}>
+                     <Modal className="modalCard" isOpen={modalOpen}>
                          <button onClick={setModalOpenToFalse}>X</button>
                             <h1>Test content </h1>
                             <audio autoplay controls src={sound.pronunciations[0].audio.url}></audio>
