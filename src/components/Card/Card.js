@@ -24,7 +24,8 @@ function Card({ word, definition, partSpeech, sound, pro }) {
                 <div className="media-left">
                 </div>
                 <div className="media-content">
-                    <p className="title is-4">{word.entry} </p>
+                    <p className="title is-4">{word.entry } { pro.pronunciations[0].transcriptions[0].transcription}
+                   
                     {/* if AUDIO URL IS AVAILABLE- A MODAL WILL OPEN WITH LINK TO AUDIO CLIP */}
                      {
                       sound.pronunciations[0].audio?.url && 
@@ -35,14 +36,15 @@ function Card({ word, definition, partSpeech, sound, pro }) {
                             
                             <EmojiObjectsIcon id="sound"/> 
                         </button>  
-                      }  
+                      } 
+                    </p> 
                      <Modal className="modalCard" isOpen={modalOpen}>
                             <audio autoplay controls src={sound.pronunciations[0].audio.url}></audio>
                          <button onClick={setModalOpenToFalse}>X</button>
                          {/* embed audio link here */}
                      </Modal>
                     {/* END OF MODAL */}
-                    <p>{pro.pronunciations[0].transcriptions[0].transcription}</p>
+                  
                     <hr></hr>
                     <p id="speech" className="subtitle is-6">{partSpeech.lexemes[0].partOfSpeech}</p>
                     <div className="content">
