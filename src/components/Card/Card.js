@@ -37,9 +37,8 @@ function Card({ word, definition, partSpeech, sound, pro }) {
                         </button>  
                       }  
                      <Modal className="modalCard" isOpen={modalOpen}>
-                         <button onClick={setModalOpenToFalse}>X</button>
-                            <h1>Test content </h1>
                             <audio autoplay controls src={sound.pronunciations[0].audio.url}></audio>
+                         <button onClick={setModalOpenToFalse}>X</button>
                          {/* embed audio link here */}
                      </Modal>
                     {/* END OF MODAL */}
