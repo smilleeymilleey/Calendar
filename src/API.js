@@ -1,10 +1,6 @@
 // add the value of the search input in a variable where the word example is in the query string
 
-
-
-// import "./components/SearchBar.js/SearchBar"
-
-
+// definition API
  async function getData(word) {
     return fetch(`https://lingua-robot.p.rapidapi.com/language/v1/entries/en/${word}`, {
         "method": "GET",
@@ -32,12 +28,16 @@ export default getData
 
 
 
+// synonym api 
+
+async function getSynonym(){
+    return fetch('https://api.dictionaryapi.dev/api/v2/entries/en_US/happy')
+    .then(response => response.json())
+    .then(data => console.log(data));
+}
 
 
-
-
-
-
+getSynonym()
 
 
 

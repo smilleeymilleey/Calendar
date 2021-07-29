@@ -34,3 +34,10 @@
   border-style: none;
   background-color: white;
 }
+
+#autoplay {
+  margin: auto;
+  width: 50%;
+  border: none;
+  padding: 10px;
+}
