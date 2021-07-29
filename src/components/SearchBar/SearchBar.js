@@ -9,7 +9,7 @@ function SearchBar({search , setSearch, callApi}) {
                 <button className="searchBtn" onClick={()=> callApi()}>Search</button>
             </div> 
         </div>
-)
+    )
 }
 
 export default SearchBar
