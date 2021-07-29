@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import SearchBar from "../SearchBar/SearchBar.js"
+import Synonym from '../Synonym/Synonym.js'
 import Card from "../Card/Card.js"
 import "./sidebar.css"
 import getData from "../../API"
@@ -29,7 +30,7 @@ function Sidebar() {
         },
         {
           path: "/synonyms",
-          sidebar: () => <div>Synonyms</div>,
+          sidebar: () => <div>Synonyms!</div>,
           main: () => <h2>Synonyms</h2>
         },
         {
@@ -47,7 +48,7 @@ function Sidebar() {
                     <div className="column is-2">
                         <button id="dictionary">Dictionary</button>
                       <Link to="/definitions">
-                        <button id="definition" className="sideBtn">Definitions</button>
+                        <button id="definition" className="sideBtn">Definitions</button>     
                       </Link>
                       <Link to="/synonyms">
                         <div className="sideBarItem">
@@ -63,11 +64,14 @@ function Sidebar() {
                     <Route
                         key={index}
                         path={route.path}
-                        exact={route.exact}
-                        children={<route.sidebar />}
+                        exact={route.exact} 
+                        children={<route.sidebar />}     
                     />
                     ))}  
                 </Switch>
+
+            {/* 1. move this to a new component called definitionSearchbar 
+                2. import to top of definition page */}
             <div id="searchColumn" className="column">
                 <SearchBar search={search} setSearch={setSearch} callApi={callApi} /> 
                 {results && <Card word={results} pro={results} definition={results} sound={results} partSpeech={results}/> }
