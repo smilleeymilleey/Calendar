@@ -1,9 +1,7 @@
-import React, { useState } from 'react'
-import SearchBar from "../SearchBar/SearchBar.js"
-import Synonym from '../Synonym/Synonym.js'
-import Card from "../Card/Card.js"
+import React from 'react'
+import Dictionary from '../Dictionary/Dictionary';
 import "./sidebar.css"
-import getData from "../../API"
+
 import {
     BrowserRouter as Router,
     Switch,
@@ -13,13 +11,13 @@ import {
 
 
 function Sidebar() {
-    const [ search, setSearch ] = useState()
-    const [ results, setResults ] = useState()
+    // const [ search, setSearch ] = useState()
+    // const [ results, setResults ] = useState()
 
-    async function callApi() {
-        let res = await getData(search)
-        setResults(res)
-    }
+    // async function callApi() {
+    //     let res = await getData(search)
+    //     setResults(res)
+    // }
 
     const routes = [
         {
@@ -35,7 +33,7 @@ function Sidebar() {
         },
         {
           path: "/definitions",
-          sidebar: () => <div>Definitions!</div>,
+          sidebar: () => <Dictionary></Dictionary>,
           main: () => <h2>Definitions</h2>
         }
       ];
@@ -45,21 +43,23 @@ function Sidebar() {
         <>
         <Router>
             <div className="columns">
-                    <div className="column is-2">
-                        <button id="dictionary">Dictionary</button>
+                    <div className="column is-half">
+                      
                       <Link to="/definitions">
                         <button id="definition" className="sideBtn">Definitions</button>     
                       </Link>
                       <Link to="/synonyms">
-                        <div className="sideBarItem">
+                    
                             <button className="sideBtn">Synonyms</button>
-                        </div>
+                   
                       </Link>
-                        <div className="sideBarItem">
+                       
                             <button className="sideBtn">Rhymes</button>
-                        </div>
+                      
                     </div>
+                    <div className="column is-half">
                 <Switch>
+
                  {routes.map((route, index) => (
                     <Route
                         key={index}
@@ -69,13 +69,14 @@ function Sidebar() {
                     />
                     ))}  
                 </Switch>
+                </div>
 
-            {/* 1. move this to a new component called definitionSearchbar 
+            {/* 1. move this to a new component called DefinitionSearchbar 
                 2. import to top of definition page */}
-            <div id="searchColumn" className="column">
-                <SearchBar search={search} setSearch={setSearch} callApi={callApi} /> 
-                {results && <Card word={results} pro={results} definition={results} sound={results} partSpeech={results}/> }
-            </div>
+        
+                {/* <SearchBar search={search} setSearch={setSearch} callApi={callApi} /> 
+                {results && <Card word={results} pro={results} definition={results} sound={results} partSpeech={results}/> } */}
+           
             </div>
         </Router>
         </>
