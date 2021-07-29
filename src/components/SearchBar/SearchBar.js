@@ -2,8 +2,6 @@ import React from 'react'
 import "./SearchBar.css"
 
 function SearchBar({search , setSearch, callApi}) {
-    
-
     return (
         <div>
             <div className="search">
