@@ -3,7 +3,7 @@ import Card from "../Card/Card"
 import getData from "../../API"
 import "./SearchBar.css"
 
-function DictionarySearchBar() {
+function DefinitionSearchBar() {
 
     const [ search, setSearch ] = useState()
     const [ results, setResults ] = useState()
@@ -27,4 +27,4 @@ function DictionarySearchBar() {
 )
 }
 
-export default DictionarySearchBar
+export default DefinitionSearchBar

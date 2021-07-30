@@ -1,0 +1,12 @@
+.card-header {
+    margin: auto;
+    width: 50%;
+    background-color: white;   
+    text-align: center !important; 
+    align-items: center;
+}
+
+.card-header-title {
+    text-align: center !important;
+    align-items: center;
+}

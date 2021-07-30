@@ -1,5 +1,4 @@
 import React from 'react'
-import Dictionary from '../Dictionary/Dictionary';
 import "./sidebar.css"
 
 import {
@@ -8,6 +7,8 @@ import {
     Route,
     Link
   } from "react-router-dom";
+import Definition from '../Definition/Definition';
+import Synonym from '../Synonym/Synonym';
 
 
 function Sidebar() {
@@ -28,12 +29,12 @@ function Sidebar() {
         },
         {
           path: "/synonyms",
-          sidebar: () => <div>Synonyms!</div>,
+          sidebar: () => <Synonym></Synonym>,
           main: () => <h2>Synonyms</h2>
         },
         {
           path: "/definitions",
-          sidebar: () => <Dictionary></Dictionary>,
+          sidebar: () => <Definition></Definition>,
           main: () => <h2>Definitions</h2>
         }
       ];
