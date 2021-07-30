@@ -43,21 +43,17 @@ function Sidebar() {
         <>
         <Router>
             <div className="columns">
-                    <div className="column is-half">
+                    <div id="sidebar" className="column is-one-fifth">
                       
                       <Link to="/definitions">
                         <button id="definition" className="sideBtn">Definitions</button>     
                       </Link>
                       <Link to="/synonyms">
-                    
                             <button className="sideBtn">Synonyms</button>
-                   
                       </Link>
-                       
                             <button className="sideBtn">Rhymes</button>
-                      
                     </div>
-                    <div className="column is-half">
+                    <div id="content" className="column is-four-fifth">
                 <Switch>
 
                  {routes.map((route, index) => (

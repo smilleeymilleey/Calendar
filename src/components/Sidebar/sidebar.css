@@ -41,3 +41,7 @@
     color: white;
     cursor: pointer;
 }
+
+#content {
+    background-color: whitesmoke;
+}
