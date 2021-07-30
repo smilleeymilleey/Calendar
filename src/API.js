@@ -2,9 +2,9 @@
 
 // definition API
 
-function getApi(){
 
- async function getData(word) {
+
+ export async function getData(word) {
     return fetch(`https://lingua-robot.p.rapidapi.com/language/v1/entries/en/${word}`, {
         "method": "GET",
         "headers": {
@@ -24,20 +24,16 @@ function getApi(){
     });      
 }
 
-getData()
+
+
+
 // synonym api 
 
-function getSynonym(){
-    return fetch('https://api.dictionaryapi.dev/api/v2/entries/en_US/happy')
+export async function getSynonym(input){
+    return fetch(`https://api.dictionaryapi.dev/api/v2/entries/en_US/ ${input}`)
     .then(response => response.json())
-    .then(data => console.log(data));
+    
 }
 
-getSynonym()
 
 
-
-
-
-}
-export default getApi()

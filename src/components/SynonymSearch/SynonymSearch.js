@@ -1,6 +1,6 @@
 import React, { useState }from 'react'
 import "./SynonymSearch.css"
-import getSynonym from "../../API"
+import { getSynonym } from "../../API"
 import SynonymCard from "../SynonymCard/SynonymCard"
 
 function SynonymSearch() {
@@ -10,7 +10,7 @@ function SynonymSearch() {
 
   async function callSynonym(){
     let result = await getSynonym(input)
-    setSynonym(result)
+    setSynonym(result[0])
   }
   
     return (
@@ -19,7 +19,18 @@ function SynonymSearch() {
           <input className="searchBar" placeholder="search" value={input} onChange={(e) => setInput(e.target.value)}/>
           <button onClick={() => callSynonym()} className="button">Submit</button>  
         </div>
-        <SynonymCard similarWords={synonym}></SynonymCard>
+
+       
+        
+          {
+            
+
+          <SynonymCard similarwords={synonym}/>
+          }
+
+
+        
+      
     </>
     )
 }

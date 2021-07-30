@@ -1,6 +1,6 @@
 import React, { useState }from 'react'
 import Card from "../Card/Card"
-import getData from "../../API"
+import { getData } from "../../API"
 import "./SearchBar.css"
 
 function DefinitionSearchBar() {
