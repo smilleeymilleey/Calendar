@@ -25,8 +25,6 @@
 }
 
 
-
-
 // synonym api 
 
 export async function getSynonym(input){

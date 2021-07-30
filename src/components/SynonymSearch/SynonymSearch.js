@@ -10,7 +10,7 @@ function SynonymSearch() {
 
   async function callSynonym(){
     let result = await getSynonym(input)
-    setSynonym(result[0])
+    setSynonym(result[0].meanings[1].definitions[0].synonyms)
   }
   
     return (
