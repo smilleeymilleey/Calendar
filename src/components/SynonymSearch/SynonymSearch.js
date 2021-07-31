@@ -3,7 +3,7 @@ import "./SynonymSearch.css"
 import { getSynonym } from "../../API"
 import SynonymCard from "../SynonymCard/SynonymCard"
 
-function SynonymSearch() {
+function SynonymSearch(props) {
 
   const [ input, setInput] = useState()
   const [ synonym, setSynonym] = useState()
@@ -11,6 +11,7 @@ function SynonymSearch() {
   async function callSynonym(){
     let result = await getSynonym(input)
     setSynonym(result[0].meanings[1].definitions[0].synonyms)
+  
   }
   
     return (
@@ -20,17 +21,13 @@ function SynonymSearch() {
           <button onClick={() => callSynonym()} className="button">Submit</button>  
         </div>
 
+        { synonym.map(( sword) => 
+        
+        <SynonymCard similarwords={sword}/>
+        )
+
+        }
        
-        
-          {
-            
-
-          <SynonymCard similarwords={synonym}/>
-          }
-
-
-        
-      
     </>
     )
 }
