@@ -1,12 +1,13 @@
 import React from 'react'
 import "./SynonymCard.css"
 
-function SynonymCard({ similarwords }) {
+function SynonymCard({ similarwords, error }) {
     return (
         <div>
             <header className="card-header">
                 <p className="card-header-title">
-                {JSON.stringify(similarwords)}
+                {similarwords}
+                {error}
                 </p>
                 <button className="card-header-icon" aria-label="more options">
                 <span className="icon">

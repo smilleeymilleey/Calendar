@@ -19,7 +19,7 @@ function DefinitionSearchBar() {
                 <input className="searchBar" placeholder="search" value={search} onChange={(e) => setSearch(e.target.value)}/>
                 <button className="searchBtn" onClick={()=> callApi()}>Search</button>
 
-                {results && 
+                {results &&
                  <Card word={results} pro={results} definition={results} sound={results} partSpeech={results}/> 
                 }
             </div> 

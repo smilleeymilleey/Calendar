@@ -2,11 +2,12 @@
     margin: auto;
     width: 50%;
     background-color: white;   
-    text-align: center !important; 
+    margin-top: 5px;
+    margin-bottom: 5px;
     align-items: center;
 }
 
 .card-header-title {
-    text-align: center !important;
+    color: black;
     align-items: center;
 }

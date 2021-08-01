@@ -24,27 +24,24 @@ function Card({ word, definition, partSpeech, sound, pro }) {
                 <div className="media-left">
                 </div>
                 <div className="media-content">
-                    <p className="title is-4">{word.entry } { pro.pronunciations[0].transcriptions[0].transcription}
-                   
-                    {/* if AUDIO URL IS AVAILABLE- A MODAL WILL OPEN WITH LINK TO AUDIO CLIP */}
+                    <p className="title is-4">{word.entry} </p>
+                    {/* if AUDIO IS AVAILABLE- A MODAL WILL OPEN WITH AUDIO CLIP */}
                      {
-                      sound.pronunciations[0].audio?.url && 
-                        <button 
-                            id="myBtn" 
-                            onClick={setModalOpenToTrue} 
-                            href={sound.pronunciations[0].audio.url}>
-                            
+                        sound.pronunciations[0].audio?.url && 
+                        <button id="myBtn" onClick={setModalOpenToTrue} href={sound.pronunciations[0].audio.url}>
                             <EmojiObjectsIcon id="sound"/> 
                         </button>  
-                      } 
-                    </p> 
-                     <Modal className="modalCard" isOpen={modalOpen}>
-                            <audio id="autoplay" autoplay controls src={sound.pronunciations[0].audio.url}></audio>
+                      }  
+                      <div id="myModal"  className="modal">
+                        <h1>Content</h1>
+                     </div>  
+                     <Modal isOpen={modalOpen}>
                          <button onClick={setModalOpenToFalse}>X</button>
+                         <h1>Test content </h1>
                          {/* embed audio link here */}
                      </Modal>
-                    {/* END OF MODAL */}
-                  
+
+                    <p>{pro.pronunciations[0].transcriptions[0].transcription}</p>
                     <hr></hr>
                     <p id="speech" className="subtitle is-6">{partSpeech.lexemes[0].partOfSpeech}</p>
                     <div className="content">
