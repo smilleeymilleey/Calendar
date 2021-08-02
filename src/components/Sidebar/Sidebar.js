@@ -9,6 +9,7 @@ import {
   } from "react-router-dom";
 import Definition from '../Definition/Definition';
 import Synonym from '../Synonym/Synonym';
+import Rhyme from '../Rhyme/Rhyme';
 
 
 function Sidebar() {
@@ -36,6 +37,11 @@ function Sidebar() {
           path: "/definitions",
           sidebar: () => <Definition></Definition>,
           main: () => <h2>Definitions</h2>
+        },
+        {
+          path: "/rhymes",
+          sidebar: () => <Rhyme></Rhyme>,
+          main: () => <h2>Rhyme Page</h2>
         }
       ];
 
@@ -52,7 +58,9 @@ function Sidebar() {
                       <Link to="/synonyms">
                             <button className="sideBtn">Synonyms</button>
                       </Link>
+                      <Link to="/rhymes">
                             <button className="sideBtn">Rhymes</button>
+                      </Link>
                     </div>
                     <div id="content" className="column is-four-fifth">
                 <Switch>

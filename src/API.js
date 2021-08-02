@@ -34,4 +34,9 @@ export async function getSynonym(input){
 }
 
 
+// rhyme api
 
+export async function getRhyme(){
+    return fetch('https://rhymebrain.com/talk?function=getRhymes&word=hello')
+    .then(response => response.json())
+}

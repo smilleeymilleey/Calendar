@@ -1,6 +1,4 @@
 .synonymSearch{
-    margin: auto;
-    width: 50%;
     padding: 10px;
     align-items: center;
 }
@@ -18,4 +16,10 @@
     margin-top: 10%;
     padding-bottom: 10px;
     height: 25px;
+}
+
+.synonymContainer {
+    margin: auto;
+    width: 50%;
+    text-align: center;
 }
