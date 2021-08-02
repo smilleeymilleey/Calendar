@@ -45,3 +45,9 @@
 #content {
     background-color: whitesmoke;
 }
+
+@media only screen and (max-width: 768px){
+    #sidebar {
+        display: none;
+    }
+}

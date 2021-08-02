@@ -4,7 +4,8 @@ import "./card.css"
 import EmojiObjectsIcon from '@material-ui/icons/EmojiObjects';
 
 
-function Card({ word, definition, partSpeech, sound, pro }) {
+function Card({ nodef, results }) {
+    console.log(results)
     const [ modalOpen, setModalOpen] = useState(false)
 
     const setModalOpenToTrue =()=>{
@@ -13,6 +14,7 @@ function Card({ word, definition, partSpeech, sound, pro }) {
     const setModalOpenToFalse =()=>{
         setModalOpen(false)
     }
+    
 
     return (
         <div>
@@ -24,11 +26,11 @@ function Card({ word, definition, partSpeech, sound, pro }) {
                 <div className="media-left">
                 </div>
                 <div className="media-content">
-                    <p className="title is-4">{word.entry} </p>
+                    <p className="title is-4">{results?.entry} {nodef}</p>
                     {/* if AUDIO IS AVAILABLE- A MODAL WILL OPEN WITH AUDIO CLIP */}
                      {
-                        sound.pronunciations[0].audio?.url && 
-                        <button id="myBtn" onClick={setModalOpenToTrue} href={sound.pronunciations[0].audio.url}>
+                        results?.pronunciations[0].audio?.url && 
+                        <button id="myBtn" onClick={setModalOpenToTrue} href={results?.pronunciations[0].audio.url}>
                             <EmojiObjectsIcon id="sound"/> 
                         </button>  
                       }  
@@ -41,11 +43,11 @@ function Card({ word, definition, partSpeech, sound, pro }) {
                          {/* embed audio link here */}
                      </Modal>
 
-                    <p>{pro.pronunciations[0].transcriptions[0].transcription}</p>
+                    <p>{results?.pronunciations[0].transcriptions[0].transcription}</p>
                     <hr></hr>
-                    <p id="speech" className="subtitle is-6">{partSpeech.lexemes[0].partOfSpeech}</p>
+                    <p id="speech" className="subtitle is-6">{results?.lexemes[0].partOfSpeech}</p>
                     <div className="content">
-                        <p className="subtitle is-6">{definition.lexemes[0].senses[0].definition}</p>
+                        <p className="subtitle is-6">{results?.lexemes[0].senses[0].definition}</p>
                     </div>
                 </div>
                 </div>

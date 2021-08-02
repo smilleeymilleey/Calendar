@@ -10,7 +10,16 @@ function DefinitionSearchBar() {
 
     async function callApi() {
         let res = await getData(search)
+        console.log("res", res)
         setResults(res)
+    }
+
+    function checkDefinition(results){
+        if(!results){
+            return <Card nodef="no definition"></Card>
+        } else {
+            return <Card results={results}></Card> 
+        }
     }
 
     return (
@@ -19,9 +28,7 @@ function DefinitionSearchBar() {
                 <input className="searchBar" placeholder="search" value={search} onChange={(e) => setSearch(e.target.value)}/>
                 <button className="searchBtn" onClick={()=> callApi()}>Search</button>
 
-                {results &&
-                 <Card word={results} pro={results} definition={results} sound={results} partSpeech={results}/> 
-                }
+                {checkDefinition(results)}
             </div> 
       
 )
