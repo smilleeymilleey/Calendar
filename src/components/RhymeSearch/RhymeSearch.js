@@ -20,7 +20,7 @@ function RhymeSearch() {
    async function callRhyme(){
     let rhymeRes = await getRhyme(wordInput) 
     console.log("res", rhymeRes)
-    setRhymeResults(rhymeRes[0])
+    setRhymeResults(rhymeRes)
     }
    
     return (
