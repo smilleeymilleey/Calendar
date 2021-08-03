@@ -8,17 +8,18 @@ function DefinitionSearchBar() {
     const [ search, setSearch ] = useState()
     const [ results, setResults ] = useState()
 
-    async function callApi() {
+    async function callApi(search) {
         let res = await getData(search)
         console.log("res", res)
         setResults(res)
     }
 
     function checkDefinition(results){
-        if(!results){
-            return <Card nodef="no definition"></Card>
-        } else {
+        console.log(results)
+        if(results){
             return <Card results={results}></Card> 
+        } else {
+            return <Card nodef="no definition"></Card>
         }
     }
 
