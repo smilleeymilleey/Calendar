@@ -1,10 +1,9 @@
 import React from 'react'
-import RhymeSearch from '../RhymeSearch/RhymeSearch'
 
 function Rhyme() {
     return (
         <div className="container">
-            <RhymeSearch></RhymeSearch>
+            <h1>Testing</h1>
         </div>
     )
 }

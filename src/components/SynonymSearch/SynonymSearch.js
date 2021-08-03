@@ -27,8 +27,8 @@ function SynonymSearch(props) {
     return (
     <div className="synonymContainer">
         <div className="synonymSearch">
-          <input className="searchBarSynonym" placeholder="search" value={input} onChange={(e) => setInput(e.target.value)}/>
-          <button id="submitBtn" onClick={() => callSynonym()} className="button">Submit</button>  
+          <input className="searchBar" placeholder="search" value={input} onChange={(e) => setInput(e.target.value)}/>
+          <button onClick={() => callSynonym()} className="button">Submit</button>  
         </div>
         {checkError(synonym)}  
     </div>
