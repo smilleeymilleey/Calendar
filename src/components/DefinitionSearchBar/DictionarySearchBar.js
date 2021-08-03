@@ -19,17 +19,10 @@ function DefinitionSearchBar() {
     
             <div className="search">
                 <input className="searchBar" placeholder="search" value={search} onChange={(e) => setSearch(e.target.value)}/>
-<<<<<<< HEAD
-                <button className="searchBtn" onClick={()=> callApi(search)}>Search</button>
- 
-                {results &&
-                 <Card results={results}/> 
-=======
                 <button className="searchBtn" onClick={()=> callApi()}>Search</button>
 
                 {results && 
                  <Card word={results} pro={results} definition={results} sound={results} partSpeech={results}/> 
->>>>>>> parent of e77328f (fixed bug and definitions show up again)
                 }
             </div> 
       

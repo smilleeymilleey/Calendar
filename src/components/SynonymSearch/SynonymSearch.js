@@ -19,18 +19,13 @@ function SynonymSearch(props) {
           <input className="searchBar" placeholder="search" value={input} onChange={(e) => setInput(e.target.value)}/>
           <button onClick={() => callSynonym()} className="button">Submit</button>  
         </div>
-<<<<<<< HEAD
-        {checkError(synonym)}  
-    </div>
-=======
 
       {synonym.map((sword) => 
         <SynonymCard similarwords={sword}/>
       )
       }
        
-    </>
->>>>>>> parent of e77328f (fixed bug and definitions show up again)
+    </div>
   )
 }
 
