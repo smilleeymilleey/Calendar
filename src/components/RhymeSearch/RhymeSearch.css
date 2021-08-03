@@ -1,0 +1,18 @@
+
+.searchRhymeContainer{
+    text-align: center;
+    align-items: center;   
+}
+
+#searchRhyme{
+    width: 30%;
+    margin-top: 5%;
+    margin-bottom: 3%;    
+}
+
+#sub {
+    background-color: mediumpurple;
+    border-color: mediumpurple;
+    color:white;
+    font-weight: bold;
+}
