@@ -1,26 +1,18 @@
 import React, { useState }from 'react'
 import RhymeCard from '../RhymeCard/RhymeCard'
-import "./RhymeSearch.css"
 import { getRhyme } from "../../API"
 
 
 
 function RhymeSearch() {
     
-    const [wordInput, setWordInput] = useState()
-    const [rhymeResults, setRhymeResults] = useState()
-    
-    function checkRhyme(rhymeResults) {
-        if (rhymeResults) {
-            return <RhymeCard rhyme={rhymeResults}></RhymeCard>         
-        } else {
-            return <RhymeCard er="no rhymes"></RhymeCard>
-        }
-    }
-   async function callRhyme(){
+  const [wordInput, setWordInput] = useState()
+  const [rhymeResults, setRhymeResults] = useState()
+  
+  async function callRhyme(){
     let rhymeRes = await getRhyme(wordInput) 
     console.log("res", rhymeRes)
-    setRhymeResults(rhymeRes)
+    setRhymeResults(rhymeRes || [])
     }
    
     return (
@@ -30,7 +22,10 @@ function RhymeSearch() {
             <button onClick={()=>callRhyme()} id="sub">Submit</button>
         </div>
         <div>
-        {checkRhyme(rhymeResults)}
+        {rhymeResults && rhymeResults.map((rhym) => 
+           <RhymeCard rhmeWord={rhym}></RhymeCard>
+          )  
+        }
         </div>
     </div>
     )

@@ -1,13 +1,12 @@
 import React from 'react'
 
 
-function RhymeCard({rhme, er}) {
+function RhymeCard({ rhmeWord }) {
     return (
         <div>
         <header className="card-header">
             <p className="card-header-title">
-                {rhme}
-                {er}
+              {JSON.stringify(rhmeWord.word)}
             </p>
             <button className="card-header-icon" aria-label="more options">
             <span className="icon">
