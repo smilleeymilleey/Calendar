@@ -4,7 +4,7 @@ import "./card.css"
 import EmojiObjectsIcon from '@material-ui/icons/EmojiObjects';
 
 
-function Card({ results, err }) {
+function Card({ results }) {
     console.log(results)
     const [ modalOpen, setModalOpen] = useState(false)
 
@@ -14,15 +14,7 @@ function Card({ results, err }) {
     const setModalOpenToFalse =()=>{
         setModalOpen(false)
     }
-    
-    function ifEntry(err){
-        let resEntry = results.entry 
-        if (!results.entry) {
-         return {err}
-        }else{
-        return resEntry
-        }
-    }
+  
 
   
     return (
@@ -35,23 +27,23 @@ function Card({ results, err }) {
                 <div className="media-left">
                 </div>
                 <div className="media-content">
-                    <p className="title is-4">{ifEntry}</p>
-                    <p>{results.pronunciations?[0].transcriptions[0].transcription:err}</p>
+                    <p className="title is-4">{results?.entry}</p>
+                    <p>{results?.pronunciations[0]?.transcriptions[0].transcription}</p>
                    <p>
                     {/* if AUDIO URL IS AVAILABLE- A MODAL WILL OPEN WITH LINK TO AUDIO CLIP */}
                      {
-                      results.pronunciations[0].audio?.url && 
+                      results?.pronunciations[0]?.audio?.url && 
                         <button 
                             id="myBtn" 
                             onClick={setModalOpenToTrue} 
-                            href={results.pronunciations[0].audio.url}>
+                            href={results?.pronunciations[0]?.audio.url}>
                             
                             <EmojiObjectsIcon id="sound"/> 
                         </button>  
                       } 
                     </p> 
                      <Modal className="modalCard" isOpen={modalOpen}>
-                            <audio id="autoplay" autoplay controls src={results.pronunciations[0].audio.url}></audio>
+                            <audio id="autoplay" autoplay controls src={results?.pronunciations[0]?.audio.url}></audio>
                          <button onClick={setModalOpenToFalse}>X</button>
                          {/* embed audio link here */}
                      </Modal>
