@@ -8,22 +8,27 @@ function DefinitionSearchBar() {
     const [ search, setSearch ] = useState()
     const [ results, setResults ] = useState()
 
-    
     async function callApi(search) {
         let res = await getData(search)
         console.log("res", res)
         setResults(res)
     }
 
+    function ifResults(){
+      if(!results) {
+          return <Card err="no results"></Card>
+        }else {
+          return <Card results={results}></Card>
+      }
+    }
+
     return (
     
             <div className="search">
                 <input className="searchBar" placeholder="search" value={search} onChange={(e) => setSearch(e.target.value)}/>
-                <button className="searchBtn" onClick={()=> callApi()}>Search</button>
+                <button className="searchBtn" onClick={()=> callApi(search)}>Search</button>
 
-                {results && 
-                 <Card word={results} pro={results} definition={results} sound={results} partSpeech={results}/> 
-                }
+              {ifResults()}
             </div> 
       
         )

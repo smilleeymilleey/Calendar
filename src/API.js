@@ -1,7 +1,7 @@
 
 // definition API
- export async function getData(search) {
-    return fetch(`https://lingua-robot.p.rapidapi.com/language/v1/entries/en/${search}`, {
+ export async function getData(word) {
+    return fetch(`https://lingua-robot.p.rapidapi.com/language/v1/entries/en/${word}`, {
         "method": "GET",
         "headers": {
             "x-rapidapi-key": "29d4921783mshda62aef3167eaf2p1b6114jsne3856612f90d",
