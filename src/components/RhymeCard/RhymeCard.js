@@ -1,9 +1,10 @@
 import React from 'react'
+import './RhymeCard.css'
 
 
 function RhymeCard({ rhmeWord }) {
     return (
-        <div>
+        <div className="rhymeContainer">
         <header className="card-header">
             <p className="card-header-title">
               {JSON.stringify(rhmeWord.word)}

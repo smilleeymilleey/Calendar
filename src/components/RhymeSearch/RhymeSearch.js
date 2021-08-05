@@ -1,7 +1,7 @@
 import React, { useState }from 'react'
 import RhymeCard from '../RhymeCard/RhymeCard'
+import "./RhymeSearch.css"
 import { getRhyme } from "../../API"
-
 
 
 function RhymeSearch() {
@@ -21,7 +21,7 @@ function RhymeSearch() {
             <input id="searchRhyme"placeholder="search rhyme" value={wordInput} onChange={(e) => setWordInput(e.target.value)}/>
             <button onClick={()=>callRhyme()} id="sub">Submit</button>
         </div>
-        <div>
+        <div className="scroll">
         {rhymeResults && rhymeResults.map((rhym) => 
            <RhymeCard rhmeWord={rhym}></RhymeCard>
           )  

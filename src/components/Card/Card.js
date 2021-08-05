@@ -16,7 +16,6 @@ function Card({ results }) {
     }
   
 
-  
     return (
         <div>
             <div className="card">
@@ -36,14 +35,14 @@ function Card({ results }) {
                         <button 
                             id="myBtn" 
                             onClick={setModalOpenToTrue} 
-                            href={results?.pronunciations[0]?.audio.url}>
+                            href={results?.pronunciations[0]?.audio?.url}>
                             
                             <EmojiObjectsIcon id="sound"/> 
                         </button>  
                       } 
                     </p> 
                      <Modal className="modalCard" isOpen={modalOpen}>
-                            <audio id="autoplay" autoplay controls src={results?.pronunciations[0]?.audio.url}></audio>
+                            <audio id="autoplay" autoplay controls src={results?.pronunciations[0]?.audio?.url}></audio>
                          <button onClick={setModalOpenToFalse}>X</button>
                          {/* embed audio link here */}
                      </Modal>
