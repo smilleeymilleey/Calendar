@@ -7,7 +7,7 @@ function RhymeCard({ rhmeWord }) {
         <div className="rhymeContainer">
         <header className="card-header">
             <p className="card-header-title">
-              {JSON.stringify(rhmeWord.word)}
+              {rhmeWord.word}
             </p>
             <button className="card-header-icon" aria-label="more options">
             <span className="icon">
