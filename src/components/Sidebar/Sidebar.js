@@ -10,6 +10,7 @@ import {
 import Definition from '../Definition/Definition';
 import Synonym from '../Synonym/Synonym';
 import Rhyme from '../Rhyme/Rhyme';
+import ToDo from '../ToDo/ToDo';
 
 
 function Sidebar() {
@@ -42,6 +43,11 @@ function Sidebar() {
           path: "/rhymes",
           sidebar: () => <Rhyme></Rhyme>,
           main: () => <h2>Rhyme Page</h2>
+        },
+        {
+          path: "/todo",
+          sidebar: () => <ToDo></ToDo>,
+          main: () => <h2>To Do Page</h2>
         }
       ];
 
@@ -60,6 +66,9 @@ function Sidebar() {
                       </Link>
                       <Link to="/rhymes">
                             <button className="sideBtn">Rhymes</button>
+                      </Link>
+                      <Link to="/todo">
+                            <button className="sideBtn">To Do</button>
                       </Link>
                     </div>
                     <div id="content" className="column is-four-fifth">

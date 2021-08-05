@@ -6,7 +6,7 @@ function SynonymCard({ similarwords }) {
         <div>
             <header className="card-header">
                 <p className="card-header-title">
-                {JSON.stringify(similarwords)}
+                {similarwords}
                 </p>
                 <button className="card-header-icon" aria-label="more options">
                 <span className="icon">
